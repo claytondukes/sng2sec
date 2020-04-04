@@ -104,5 +104,30 @@ alarm.correlation_group=ETH_PORT_CHANNEL-PORT-UD
 alarm.alarm_type=1
 alarm.correlation=PairWithWindow-05
 TAGS=.classifier.alarm
-
 ```
+
+## Flow
+
+Below is the simplified event flow.
+
+               +-----------+
+      udp/514  |           |
+    +----------> syslog-ng +---+ /etc/syslog-ng/patterndb.d/syslog-messages.xml
+               |           |
+               +-----------+
+                     |
+                     v
+  /var/log/correlator/sec-input-events.log                   
+                     |
+               +-----v-----+
+               |           |
+               |    SEC    +---+ /etc/sec/correlator.conf
+               |           |
+               +-----------+
+                     |   
+                     |
+                     v
+  /var/log/correlator/sec-output-events.log
+  /var/log/correlator/correlated.log
+  /var/log/correlator/flapping.log
+  /var/log/correlator/unmatch.log
