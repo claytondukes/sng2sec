@@ -110,6 +110,7 @@ TAGS=.classifier.alarm
 
 Below is the simplified event flow.
 
+```
                +-----------+
       udp/514  |           |
     +----------> syslog-ng +---+ /etc/syslog-ng/patterndb.d/syslog-messages.xml
@@ -131,3 +132,4 @@ Below is the simplified event flow.
   /var/log/correlator/correlated.log
   /var/log/correlator/flapping.log
   /var/log/correlator/unmatch.log
+```
