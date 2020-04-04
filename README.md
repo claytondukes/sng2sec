@@ -106,6 +106,14 @@ alarm.correlation=PairWithWindow-05
 TAGS=.classifier.alarm
 ```
 
+Attached `/etc/syslog-ng/patterndb.d/syslog-messages.xml` file contains selected patterns for cisco messages.
+So best to test with some real traffics generated from cisco network devices.
+
+Watch files:
+*  `/var/log/correlator/sec-input-events.log`  - messages matched patterns, correlator input
+*  `/var/log/correlator/sec-output-events.log` - output events from correlator
+*  `/var/log/correlator/correlated.log` - correlated Problem/Resolution pairs
+
 ## Flow
 
 Below is the simplified event flow.
